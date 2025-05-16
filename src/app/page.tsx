@@ -1,7 +1,13 @@
+import Header from "@/components/header";
+import HeroSection from "@/components/heroSection";
+import BrandsSection from "@/components/brandSection";
+
 export default function Home() {
   return (
     <>
-      <h1>Welcome to automotive</h1>
+      <Header />
+      <HeroSection />
+      <BrandsSection />
     </>
   );
 }
