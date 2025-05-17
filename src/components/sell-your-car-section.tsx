@@ -50,9 +50,9 @@ const SellYourCarSection = () => {
       <div className="max-w-7xl mx-auto space-y-12">
         {/* upper section */}
         <div className="bg-[#EEF1FB] rounded-3xl overflow-hidden shadow-lg">
-          <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left side - Car image */}
-            <div className="relative h-[24rem] lg:h-[30rem]">
+            <div className="relative h-[24rem] lg:h-full">
               <Image
                 src="/assets/fair-price-for-your-car.jpg"
                 alt="Sell your car"
@@ -63,7 +63,7 @@ const SellYourCarSection = () => {
 
             {/* Right side - Sell form */}
             <div className="p-10 flex flex-col justify-center items-start">
-              <h2 className="text-xl/normal lg:text-4xl/normal font-bold mb-2 text-black">
+              <h2 className="text-2xl/normal lg:text-4xl/normal font-bold mb-2 text-black">
                 Get A Fair Price For Your Car Sell To Us Today
               </h2>
 
@@ -92,7 +92,7 @@ const SellYourCarSection = () => {
                   })}
               </div>
 
-              <button className="bg-(--color-blue-custom) hover:bg-(--color-blue-light) text-white font-medium px-6 py-4 text-base m-2 rounded-lg flex items-center gap-2 hover:cursor-pointer transition-colors">
+              <button className="bg-(--color-blue-custom) hover:bg-(--color-blue-light) text-white font-medium px-6 py-4 text-base rounded-lg flex items-center gap-2 hover:cursor-pointer transition-colors">
                 Get Started <ArrowUpRight />
               </button>
             </div>

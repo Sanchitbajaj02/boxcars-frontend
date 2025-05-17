@@ -18,7 +18,7 @@ const BrandsSection = () => {
     <section className="bg-(--custom-background) py-20 px-8 lg:px-2 rounded-t-4xl -mt-4 lg:-mt-8 relative">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-2 justify-between items-center mb-10">
-          <h2 className="text-xl lg:text-3xl font-bold text-black">
+          <h2 className="text-2xl lg:text-4xl font-bold text-black text-center lg:text-left mb-4 lg:mb-0">
             Explore Our Premium Brands
           </h2>
           <Link
