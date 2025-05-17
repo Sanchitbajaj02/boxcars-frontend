@@ -44,8 +44,13 @@
 }
 
 :root {
+  /* custom */
   --color-blue-custom: #405FF2;
+  --color-blue-light: #3A56D4;
+  --blue-dark: #050B20;
   --custom-background: #F9FBFC;
+
+  /* default */
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
