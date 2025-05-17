@@ -1,9 +1,9 @@
 "use client";
 
 import type React from "react";
-
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Facebook, Twitter, Instagram, Linkedin, ArrowUp } from "lucide-react";
 
 const Footer = () => {
@@ -26,7 +26,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#050B20] text-white">
       {/* Newsletter Section */}
-      <div className="max-w-6xl mx-auto px-8 lg:px-2 py-12">
+      <div className="max-w-6xl mx-auto px-8 lg:px-2 py-8">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
           <div className="mb-6 md:mb-0">
             <h2 className="text-2xl font-bold mb-2">Join BOXCARS</h2>
@@ -35,28 +35,29 @@ const Footer = () => {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="flex w-full md:w-auto">
-            <div className="relative flex-grow max-w-md">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email address"
-                className="w-full px-4 py-3 rounded-l-full bg-[#1E2235] text-white border-none focus:outline-none focus:ring-2 focus:ring-[#4361EE]"
-                required
-              />
-              <button
-                type="submit"
-                className="absolute right-0 top-0 h-full px-6 rounded-r-full bg-(--color-blue-custom) hover:bg-(--color-blue-light) transition-colors duration-200 text-white font-medium"
-              >
-                Sign Up
-              </button>
-            </div>
+          <form
+            onSubmit={handleSubmit}
+            className="flex-1 bg-(--blue-gray) rounded-full flex flex-row justify-between max-w-md ml-auto"
+          >
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Your email address"
+              className="flex-2 px-4 py-2 text-white border-none focus:outline"
+              required
+            />
+            <button
+              type="submit"
+              className="bg-(--color-blue-custom) hover:bg-(--color-blue-light) text-white font-medium px-6 py-3 text-base m-2 rounded-full  hover:cursor-pointer transition-colors"
+            >
+              Sign Up
+            </button>
           </form>
         </div>
       </div>
 
-      <hr className="border-[#2A2E3F]" />
+      <hr className="border-white/50" />
 
       {/* Links Section */}
       <div className="max-w-6xl mx-auto px-8 lg:px-2 py-12">
@@ -68,7 +69,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   About Us
                 </Link>
@@ -76,7 +77,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Blog
                 </Link>
@@ -84,7 +85,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Services
                 </Link>
@@ -92,7 +93,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   FAQs
                 </Link>
@@ -100,7 +101,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Terms
                 </Link>
@@ -108,7 +109,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Contact Us
                 </Link>
@@ -123,7 +124,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Get in Touch
                 </Link>
@@ -131,7 +132,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Help center
                 </Link>
@@ -139,7 +140,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Live chat
                 </Link>
@@ -147,7 +148,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   How it works
                 </Link>
@@ -162,7 +163,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Toyota
                 </Link>
@@ -170,7 +171,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Porsche
                 </Link>
@@ -178,7 +179,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Audi
                 </Link>
@@ -186,7 +187,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   BMW
                 </Link>
@@ -194,7 +195,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Ford
                 </Link>
@@ -202,7 +203,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Nissan
                 </Link>
@@ -210,7 +211,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Peugeot
                 </Link>
@@ -218,7 +219,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Volkswagen
                 </Link>
@@ -233,7 +234,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Sedan
                 </Link>
@@ -241,7 +242,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Hatchback
                 </Link>
@@ -249,7 +250,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   SUV
                 </Link>
@@ -257,7 +258,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Hybrid
                 </Link>
@@ -265,7 +266,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Electric
                 </Link>
@@ -273,7 +274,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Coupe
                 </Link>
@@ -281,7 +282,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Truck
                 </Link>
@@ -289,7 +290,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Convertible
                 </Link>
@@ -301,57 +302,24 @@ const Footer = () => {
           <div>
             <div className="mb-8">
               <h3 className="text-lg font-semibold mb-4">Our Mobile App</h3>
-              <div className="space-y-3">
-                <Link
-                  href="#"
-                  className="flex items-center bg-[#1E2235] hover:bg-[#2A2E3F] transition-colors p-3 rounded-lg"
-                >
-                  <span className="mr-3">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-apple"
-                    >
-                      <path d="M12 20.94c1.5 0 2.75-.67 3.95-1.89a8.8 8.8 0 0 0 2.05-5.55c0-2.84-1.5-4.73-3.55-5.67-1-.45-2.2-.7-3.45-.7-1 0-2.2.25-3.45.7C5.5 8.77 4 10.66 4 13.5a8.8 8.8 0 0 0 2.05 5.55c1.2 1.22 2.45 1.89 3.95 1.89Z"></path>
-                      <path d="M12 8.5V3"></path>
-                      <path d="M15.5 6H8.5"></path>
-                    </svg>
-                  </span>
-                  <div>
-                    <div className="text-xs">Download on the</div>
-                    <div className="font-medium">Apple Store</div>
-                  </div>
+              <div className="space-y-4">
+                <Link href="#" className="inline-block">
+                  <Image
+                    src="/assets/download-apple.png"
+                    alt="title"
+                    width={800}
+                    height={500}
+                    className=""
+                  />
                 </Link>
-                <Link
-                  href="#"
-                  className="flex items-center bg-[#1E2235] hover:bg-[#2A2E3F] transition-colors p-3 rounded-lg"
-                >
-                  <span className="mr-3">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <polygon points="3 3 21 12 3 21 3 3"></polygon>
-                    </svg>
-                  </span>
-                  <div>
-                    <div className="text-xs">Get it on</div>
-                    <div className="font-medium">Google Play</div>
-                  </div>
+                <Link href="#" className="inline-block">
+                  <Image
+                    src="/assets/donwload-google.png"
+                    alt="title"
+                    width={800}
+                    height={500}
+                    className=""
+                  />
                 </Link>
               </div>
             </div>
@@ -360,28 +328,28 @@ const Footer = () => {
               <div className="flex space-x-4">
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   <Facebook size={20} />
                   <span className="sr-only">Facebook</span>
                 </Link>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   <Twitter size={20} />
                   <span className="sr-only">Twitter</span>
                 </Link>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   <Instagram size={20} />
                   <span className="sr-only">Instagram</span>
                 </Link>
                 <Link
                   href="#"
-                  className="text-[#A0A3B1] hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   <Linkedin size={20} />
                   <span className="sr-only">LinkedIn</span>
@@ -392,8 +360,10 @@ const Footer = () => {
         </div>
       </div>
 
+      <hr className="border-white/50" />
+
       {/* Copyright Section */}
-      <div className="py-8 border-t border-white/50">
+      <div className="py-8">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-4 items-center justify-between">
           <p className="text-sm text-white/70 hover:text-white">
             Copyright &copy; {new Date().getFullYear()} example.com | All Rights
@@ -407,7 +377,7 @@ const Footer = () => {
             >
               Terms & Conditions
             </Link>
-            <span className="text-[#A0A3B1]">•</span>
+            <span className="text-white/70">•</span>
             <Link
               href="/privacy-policy"
               className="text-sm text-white/70 hover:text-white transition-colors"
