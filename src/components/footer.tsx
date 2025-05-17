@@ -27,8 +27,8 @@ const Footer = () => {
     <footer className="bg-[#050B20] text-white">
       {/* Newsletter Section */}
       <div className="max-w-6xl mx-auto px-8 lg:px-2 py-8">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-          <div className="mb-6 md:mb-0">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+          <div className="mb-6 lg:mb-0">
             <h2 className="text-2xl font-bold mb-2">Join BOXCARS</h2>
             <p className="text-white/70">
               Receive pricing updates, shopping tips & more!

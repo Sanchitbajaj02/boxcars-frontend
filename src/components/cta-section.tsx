@@ -7,7 +7,7 @@ const CtaSection = () => {
   return (
     <div className="py-20 px-8 lg:px-2 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Buy a car */}
           <div className="bg-[#E9F2FF] rounded-2xl p-8 lg:p-16 flex-col items-center justify-start relative">
             <h2 className="font-bold text-black text-3xl mb-4 leading-relaxed">

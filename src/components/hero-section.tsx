@@ -57,7 +57,7 @@ const HeroSection = () => {
           <p className="text-base font-medium text-center">
             Find cars for sale and for rent near you
           </p>
-          <h1 className="text-5xl md:text-7xl font-extrabold text-center tracking-wide">
+          <h1 className="text-5xl lg:text-7xl font-extrabold text-center tracking-wide">
             Find Your Perfect Car
           </h1>
         </div>
@@ -84,7 +84,7 @@ const HeroSection = () => {
           </div>
 
           {/* Search form */}
-          <div className=" bg-white rounded-full overflow-hidden flex items-center flex-wrap md:flex-nowrap">
+          <div className=" bg-white rounded-full overflow-hidden flex items-center flex-wrap lg:flex-nowrap">
             <div className="flex-1 border-r border-gray-200 px-6 py-3">
               <select className="w-full border-none text-black text-sm focus:outline-none bg-transparent">
                 <option>Any Makes</option>
@@ -116,7 +116,8 @@ const HeroSection = () => {
             </div>
 
             <button className="bg-(--color-blue-custom) hover:bg-(--color-blue-light) text-white font-medium px-6 py-3 text-base m-2 rounded-full flex items-center gap-2 hover:cursor-pointer transition-colors">
-              <SearchIcon size={20} /> <span className="hidden lg:inline">Search Cars</span>
+              <SearchIcon size={20} />{" "}
+              <span className="hidden lg:inline">Search Cars</span>
             </button>
           </div>
         </div>
@@ -134,7 +135,7 @@ const HeroSection = () => {
                 return (
                   <div
                     key={model.id}
-                    className="flex flex-row justify-center items-center gap-4 bg-white/25 px-8 py-2 rounded-full hover:cursor-pointer"
+                    className="flex flex-row justify-center items-center gap-2 bg-white/25 px-8 py-2 rounded-full hover:cursor-pointer"
                   >
                     <Image
                       src={model.iconImage}
@@ -142,6 +143,7 @@ const HeroSection = () => {
                       title={model.title}
                       width={30}
                       height={30}
+                      className="object-contain"
                     />
                     <p className="text-white text-base font-medium">
                       {model.title}

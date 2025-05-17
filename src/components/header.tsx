@@ -135,18 +135,17 @@ const Header = () => {
           )}
         >
           {/* Logo */}
-          <Link href="/" className="mx-2">
+          <Link href="/" className="mx-2 w-[4rem] lg:w-[6rem] h-[1.5rem] relative">
             <Image
               src="/assets/logo.png"
               alt="brand logo"
               title="brand logo"
-              width={100}
-              height={30}
+              fill
             />
           </Link>
 
           {/* Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden lg:flex space-x-8">
             {navItems &&
               navItems.length > 0 &&
               navItems.map((navItem) => {
@@ -178,7 +177,7 @@ const Header = () => {
             </Link>
           </nav>
 
-          <div className="block md:hidden">
+          <div className="block lg:hidden mx-2">
             <Button
               variant="default"
               size="icon"
