@@ -24,7 +24,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#050B20] text-white">
+    <footer className="bg-(--blue-dark) text-white">
       {/* Newsletter Section */}
       <div className="max-w-6xl mx-auto px-8 lg:px-2 py-8">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">

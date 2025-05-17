@@ -130,12 +130,12 @@ const Header = () => {
       <div className="max-w-6xl mx-auto">
         <div
           className={cn(
-            "flex flex-row items-center justify-between rounded-full p-4 lg:p-2 transition-colors mx-2 lg:mx-0",
+            "flex flex-row items-center justify-between rounded-full py-2 px-4 lg:px-2 transition-colors mx-2 lg:mx-0",
             navbg,
           )}
         >
           {/* Logo */}
-          <Link href="/" className="mx-2 w-[4rem] lg:w-[6rem] h-[1.5rem] relative">
+          <Link href="/" className="mx-2 w-16 lg:w-24 h-4 lg:h-6 relative">
             <Image
               src="/assets/logo.png"
               alt="brand logo"
