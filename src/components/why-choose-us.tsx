@@ -42,16 +42,14 @@ const whyChooseUsServices = [
 const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
   return (
     <div className="p-6 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow space-y-4">
-      <div className="w-16 h-16">
-        <div className="relative w-16 h-16">
-          <Image
-            src={icon}
-            alt={title}
-            layout="fill"
-            objectFit="contain"
-            className="transition-all duration-300 group-hover:scale-110"
-          />
-        </div>
+      <div className="relative w-16 h-16">
+        <Image
+          src={icon}
+          alt={title}
+          layout="fill"
+          objectFit="contain"
+          className="transition-all duration-300 group-hover:scale-110"
+        />
       </div>
 
       <h3 className="text-base font-medium text-black">{title}</h3>

@@ -5,16 +5,22 @@ import SellYourCarSection from "@/components/sell-your-car-section";
 import WhyChooseUs from "@/components/why-choose-us";
 import Footer from "@/components/footer";
 
+import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
+
 export default function Home() {
   return (
     <>
-      <Header />
-      <HeroSection />
-      <BrandsSection />
-      <SellYourCarSection />
-      <WhyChooseUs />
+      <SidebarProvider defaultOpen={false}>
+        <SidebarInset>
+          <Header />
+          <HeroSection />
+          <BrandsSection />
+          <SellYourCarSection />
+          <WhyChooseUs />
 
-      <Footer />
+          <Footer />
+        </SidebarInset>
+      </SidebarProvider>
     </>
   );
 }
