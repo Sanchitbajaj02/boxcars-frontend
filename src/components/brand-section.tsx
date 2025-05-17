@@ -15,7 +15,7 @@ const BrandsSection = () => {
   ];
 
   return (
-    <section className="bg-[#F9FBFC] py-20 px-8 lg:px-2 rounded-3xl -mt-16 relative z-20 shadow-lg">
+    <section className="bg-(--custom-background) py-20 px-8 lg:px-2 rounded-t-4xl -mt-8 relative z-20">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-2 justify-between items-center mb-10">
           <h2 className="text-xl lg:text-3xl font-bold text-black">
@@ -37,7 +37,7 @@ const BrandsSection = () => {
               className="flex flex-col items-center justify-center group shadow-lg p-4 rounded-md bg-white"
             >
               <div className="w-16 h-16 flex items-center justify-center mb-2">
-                <div className="relative w-12 h-12">
+                <div className="relative w-16 h-16">
                   <Image
                     src={brand.logo}
                     alt={brand.name}
