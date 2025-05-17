@@ -47,7 +47,7 @@ const serviceHooks = [
 const SellYourCarSection = () => {
   return (
     <section className="bg-white py-20 px-8 lg:px-2">
-      <div className="max-w-7xl mx-auto space-y-16">
+      <div className="max-w-7xl mx-auto space-y-12">
         {/* upper section */}
         <div className="bg-[#EEF1FB] rounded-3xl overflow-hidden shadow-lg">
           <div className="grid grid-cols-1 md:grid-cols-2">
@@ -92,7 +92,7 @@ const SellYourCarSection = () => {
                   })}
               </div>
 
-              <button className="bg-[var(--color-blue-custom)] hover:bg-blue-600 text-white font-medium px-6 py-4 text-base m-2 rounded-lg flex items-center gap-2 hover:cursor-pointer transition-colors">
+              <button className="bg-(--color-blue-custom) hover:bg-(--color-blue-light) text-white font-medium px-6 py-4 text-base m-2 rounded-lg flex items-center gap-2 hover:cursor-pointer transition-colors">
                 Get Started <ArrowUpRight />
               </button>
             </div>
@@ -100,20 +100,20 @@ const SellYourCarSection = () => {
         </div>
 
         {/* lower section */}
-        <div className="flex flex-row justify-evenly">
+        <div className="grid grid-cols-2 lg:grid-cols-4 justify-evenly gap-8 lg:gap-0">
           {serviceHooks &&
             serviceHooks.length > 0 &&
             serviceHooks.map((serviceHook) => {
               return (
                 <div
-                  className="flex flex-col items-center"
+                  className="flex flex-col items-center gap-2"
                   key={serviceHook.id}
                 >
-                  <div className="text-4xl text-black font-bold gap-2">
-                    {serviceHook.hookNumber} {serviceHook.suffix}
+                  <div className="text-3xl lg:text-5xl text-black font-bold">
+                    {serviceHook.hookNumber}{serviceHook.suffix}
                   </div>
 
-                  <p className="text-base font-medium text-black/80">{serviceHook.title}</p>
+                  <p className="tex-sm lg:text-base font-medium text-black/80">{serviceHook.title}</p>
                 </div>
               );
             })}

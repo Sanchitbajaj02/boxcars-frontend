@@ -1,7 +1,10 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { User2Icon } from "lucide-react";
+import { User2Icon, Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 const navItems = [
   {
@@ -43,12 +46,34 @@ const navItems = [
 ];
 
 const Header = () => {
+  const [navbg, setNavbg] = useState("bg-transparent");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 200) {
+        setNavbg("bg-(--blue-dark)");
+      } else {
+        setNavbg("bg-transparent");
+      }
+    });
+
+    // return () => {
+    //   window.removeEventListener('scroll')
+    // }
+  }, []);
+
   return (
-    <header className="block py-6 fixed w-full top-0 z-50">
+    <header className="block py-4 fixed w-full top-0 z-50">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-row items-center justify-between">
+        <div
+          className={cn(
+            "flex flex-row items-center justify-between rounded-full p-4 lg:p-2 transition-colors mx-2 lg:mx-0",
+            navbg,
+          )}
+        >
           {/* Logo */}
-          <Link href="/">
+          <Link href="/" className="mx-2">
             <Image
               src="/assets/logo.png"
               alt="brand logo"
@@ -88,6 +113,21 @@ const Header = () => {
               Submit Listing
             </Link>
           </nav>
+
+          <div className="hidden md:block">
+            <Button
+              variant="default"
+              size="icon"
+              className="cursor-pointer bg-(--color-blue-custom)"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? (
+                <X size={24} color="white" />
+              ) : (
+                <Menu size={24} color="white" />
+              )}
+            </Button>
+          </div>
         </div>
       </div>
     </header>

@@ -114,7 +114,7 @@ const HeroSection = () => {
             </select>
           </div>
 
-          <button className="bg-[var(--color-blue-custom)] hover:bg-blue-600 text-white font-medium px-6 py-4 text-base m-2 rounded-full flex items-center gap-2 hover:cursor-pointer">
+          <button className="bg-(--color-blue-custom) hover:bg-(--color-blue-light) text-white font-medium px-6 py-4 text-base m-2 rounded-full flex items-center gap-2 hover:cursor-pointer">
             <SearchIcon size={20} /> Search Cars
           </button>
         </div>
