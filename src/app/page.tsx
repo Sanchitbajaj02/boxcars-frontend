@@ -1,15 +1,15 @@
-import Header from "@/components/header";
-import HeroSection from "@/components/hero-section";
-import BrandsSection from "@/components/brand-section";
-import SellYourCarSection from "@/components/sell-your-car-section";
-import WhyChooseUs from "@/components/why-choose-us";
-import Footer from "@/components/footer";
-import Testimonials from "@/components/testimonials";
-import PopularMakes from "@/components/popular-makes";
-import ExploreAllVehicles from "@/components/explore-all-vehicles";
-import BlogSection from "@/components/blogs";
-import CtaSection from "@/components/cta-section";
-import CarListSection from "@/components/car-list-section";
+import Header from "@/components/home/header";
+import HeroSection from "@/components/home/hero-section";
+import BrandsSection from "@/components/home/brand-section";
+import SellYourCarSection from "@/components/home/sell-your-car-section";
+import WhyChooseUs from "@/components/home/why-choose-us";
+import Footer from "@/components/home/footer";
+import Testimonials from "@/components/home/testimonials";
+import PopularMakes from "@/components/home/popular-makes";
+import ExploreAllVehicles from "@/components/home/explore-all-vehicles";
+import BlogSection from "@/components/home/blogs";
+import CtaSection from "@/components/home/cta-section";
+import CarListSection from "@/components/home/car-list-section";
 
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 
