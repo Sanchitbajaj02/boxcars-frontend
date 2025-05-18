@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 
+import RootLayoutProvider from "@/layouts/root-layout-provider";
+
 const font = DM_Sans({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -20,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${font.className} antialiased dark`}>{children}</body>
+      <body className={`${font.className} antialiased dark`}>
+        <RootLayoutProvider>{children}</RootLayoutProvider>
+      </body>
     </html>
   );
 }
