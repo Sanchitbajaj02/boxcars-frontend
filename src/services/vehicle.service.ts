@@ -62,7 +62,11 @@ export const getAllVehicles = async (params?: {
   location?: string;
 }): Promise<Vehicle[]> => {
   try {
-    const response = await api.get<Vehicle[]>('/vehicles', { params });
+    const {data: response, status} = await api.get('/vehicle', { params });
+    if (status !== 200) {
+      throw new Error("some error occured")
+    }
+
     return response.data;
   } catch (error) {
     throw handleError(error);
@@ -74,7 +78,7 @@ export const getAllVehicles = async (params?: {
  */
 export const getVehicleById = async (vehicleId: string): Promise<Vehicle> => {
   try {
-    const response = await api.get<Vehicle>(`/vehicles/${vehicleId}`);
+    const response = await api.get<Vehicle>(`/vehicle/${vehicleId}`);
     return response.data;
   } catch (error) {
     throw handleError(error);
@@ -86,7 +90,7 @@ export const getVehicleById = async (vehicleId: string): Promise<Vehicle> => {
  */
 export const createVehicle = async (data: CreateVehicleData): Promise<Vehicle> => {
   try {
-    const response = await api.post<Vehicle>('/vehicles', data);
+    const response = await api.post<Vehicle>('/vehicle', data);
     return response.data;
   } catch (error) {
     throw handleError(error);
@@ -101,7 +105,7 @@ export const updateVehicle = async (
   data: UpdateVehicleData
 ): Promise<Vehicle> => {
   try {
-    const response = await api.put<Vehicle>(`/vehicles/${vehicleId}`, data);
+    const response = await api.put<Vehicle>(`/vehicle/${vehicleId}`, data);
     return response.data;
   } catch (error) {
     throw handleError(error);
@@ -113,7 +117,7 @@ export const updateVehicle = async (
  */
 export const deleteVehicle = async (vehicleId: string): Promise<void> => {
   try {
-    await api.delete(`/vehicles/${vehicleId}`);
+    await api.delete(`/vehicle/${vehicleId}`);
   } catch (error) {
     throw handleError(error);
   }

@@ -1,38 +1,39 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { getAllVehicles } from "@/services/vehicle.service";
+import { useQuery } from "@tanstack/react-query";
 
 interface PopularCarProps {
-  id: number;
-  title: string;
+  id: string;
   make: string;
   model: string;
   year: number;
   price: number;
   mileage: number;
   location: string;
-  image: string;
+  images: string[];
 }
 
 const PopularCarCard = ({
   id,
-  title,
   make,
   model,
   year,
   price,
   mileage,
   location,
-  image,
+  images,
 }: PopularCarProps) => {
   return (
     <div className="bg-gray-800 rounded-xl overflow-hidden relative group">
       {/* Background image */}
       <div className="relative h-48 overflow-hidden">
         <Image
-          src={image}
-          alt={title}
+          src={images[0] || "/assets/fair-price-for-your-car.jpg"}
+          alt={`${make} ${model}`}
           layout="fill"
           objectFit="cover"
           className="group-hover:scale-110 transition-transform duration-500"
@@ -72,46 +73,22 @@ const PopularCarCard = ({
 };
 
 const ExploreAllVehicles = () => {
+  const [selectedMake, setSelectedMake] = useState<string | undefined>();
+
+  const {
+    data: vehicles,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["vehicles", selectedMake],
+    queryFn: () =>
+      getAllVehicles(selectedMake ? { make: selectedMake } : undefined),
+  });
+
   const tabs = [
     { id: "all", label: "All" },
     { id: "bmw", label: "BMW" },
     { id: "mercedes", label: "Mercedes-Benz" },
-  ];
-
-  const popularCars = [
-    {
-      id: 1,
-      title: "Mercedes-Benz GLE Coupe",
-      make: "Mercedes-Benz",
-      model: "GLE Coupe",
-      year: 2023,
-      price: 74000,
-      mileage: 12000,
-      location: "New York, NY",
-      image: "/assets/fair-price-for-your-car.jpg",
-    },
-    {
-      id: 2,
-      title: "BMW X7",
-      make: "BMW",
-      model: "X7",
-      year: 2023,
-      price: 85000,
-      mileage: 8500,
-      location: "Los Angeles, CA",
-      image: "/assets/fair-price-for-your-car.jpg",
-    },
-    {
-      id: 3,
-      title: "Porsche Cayenne",
-      make: "Porsche",
-      model: "Cayenne",
-      year: 2022,
-      price: 79000,
-      mileage: 15000,
-      location: "Miami, FL",
-      image: "/assets/fair-price-for-your-car.jpg",
-    },
   ];
 
   return (
@@ -134,8 +111,11 @@ const ExploreAllVehicles = () => {
           {tabs.map((tab) => (
             <button
               key={tab.id}
+              onClick={() =>
+                setSelectedMake(tab.id === "all" ? undefined : tab.id)
+              }
               className={`px-4 py-2 text-sm rounded-full transition-colors ${
-                tab.id === "all"
+                (tab.id === "all" && !selectedMake) || tab.id === selectedMake
                   ? "bg-blue-600 text-white"
                   : "bg-gray-800 text-gray-300 hover:bg-gray-700"
               }`}
@@ -145,12 +125,50 @@ const ExploreAllVehicles = () => {
           ))}
         </div>
 
+        {/* Loading state */}
+        {isLoading && (
+          <div className="text-center py-10">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+            <p className="mt-4 text-gray-600">Loading vehicles...</p>
+          </div>
+        )}
+
+        {/* Error state */}
+        {error && (
+          <div className="text-center py-10">
+            <p className="text-red-500">
+              Failed to load vehicles. Please try again later.
+            </p>
+          </div>
+        )}
+
         {/* Car listings */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {popularCars.map((car) => (
-            <PopularCarCard key={car.id} {...car} />
-          ))}
-        </div>
+        {!isLoading && !error && vehicles && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {vehicles &&
+              vehicles.length > 0 &&
+              vehicles.map((vehicle, i) => (
+                <PopularCarCard
+                  key={i}
+                  id={vehicle.id}
+                  make={vehicle.make}
+                  model={vehicle.model}
+                  year={vehicle.year}
+                  price={vehicle.price}
+                  mileage={vehicle.mileage}
+                  location={vehicle.location}
+                  images={vehicle.images}
+                />
+              ))}
+          </div>
+        )}
+
+        {/* Empty state */}
+        {!isLoading && !error && vehicles?.length === 0 && (
+          <div className="text-center py-10">
+            <p className="text-gray-600">No vehicles found.</p>
+          </div>
+        )}
 
         {/* Pagination */}
         <div className="flex justify-center mt-8 gap-1">
