@@ -1,11 +1,11 @@
 import axios, { AxiosError } from 'axios';
-import { cookies } from 'next/headers';
+// import { cookies } from 'next/headers';
 
-const TOKEN_COOKIE_NAME = 'accessToken';
+// const TOKEN_COOKIE_NAME = 'accessToken';
 
 // Create axios instance with default config
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api',
+  baseURL: process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3001/api',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -13,23 +13,23 @@ const api = axios.create({
 });
 
 // Request interceptor for adding auth token
-api.interceptors.request.use(
-  async (config) => {
-    // initialize cookies store
-    const cookiesStore = await cookies()
+// api.interceptors.request.use(
+//   async (config) => {
+//     // initialize cookies store
+//     const cookiesStore = await cookies()
 
-    // Get token from cookies if it exists
-    const token = cookiesStore.get(TOKEN_COOKIE_NAME)?.value
+//     // Get token from cookies if it exists
+//     const token = cookiesStore.get(TOKEN_COOKIE_NAME)?.value
 
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
+//     if (token) {
+//       config.headers.Authorization = `Bearer ${token}`;
+//     }
+//     return config;
+//   },
+//   (error) => {
+//     return Promise.reject(error);
+//   }
+// );
 
 
 export const handleError = (error: unknown): Error => {

@@ -1,7 +1,7 @@
 import api, { handleError } from './api.service';
-import { cookies } from 'next/headers';
+// import { cookies } from 'next/headers';
 
-const TOKEN_COOKIE_NAME = 'accessToken';
+// const TOKEN_COOKIE_NAME = 'accessToken';
 
 export interface RegisterData {
   fullName: string;
@@ -32,8 +32,9 @@ export interface LoginData {
 // };
 
 const getToken = async () => {
-  const cookieStore = await cookies();
-  return cookieStore.get(TOKEN_COOKIE_NAME)?.value;
+  return null
+  // const cookieStore = await cookies();
+  // return cookieStore.get(TOKEN_COOKIE_NAME)?.value;
 };
 
 
