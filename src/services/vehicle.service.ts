@@ -31,6 +31,17 @@ export type CreateVehicleData = {
   features: string[];
   images: string[];
   location: string;
+  offerType: string;
+  driveType: string;
+  engineSize: number;
+  cylinder: number;
+  color: string;
+  door: number;
+  vin: string;
+  listingTitle: string;
+  category: string;
+  type: string;
+  label?: string;
 }
 
 export type UpdateVehicleData = Partial<CreateVehicleData>

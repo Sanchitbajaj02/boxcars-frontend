@@ -89,7 +89,7 @@ const SidebarComponent = ({ toggleSidebar }: { toggleSidebar: () => void }) => {
           </SidebarMenuItem>
 
           <SidebarMenuItem className="mb-4">
-            <Link href="/dashboard/list">
+            <Link href="/submit-listing">
               <Button
                 size="lg"
                 className="bg-white text-black font-medium text-base rounded-full hover:cursor-pointer"
@@ -167,7 +167,7 @@ const Header = () => {
               <User2Icon size={20} /> Signin
             </Link>
 
-            <Link href="/dashboard/list">
+            <Link href="/submit-listing">
               <Button
                 size="lg"
                 className="bg-white text-black font-medium text-base rounded-full hover:cursor-pointer"
