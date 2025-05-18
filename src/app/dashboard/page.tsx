@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -23,10 +24,20 @@ export default function Dashboard() {
   return (
     <section className="py-20 px-8 lg:px-2 relative">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col gap-2 justify-center items-center mb-10">
+        <div className="flex flex-col gap-4 justify-center items-center mb-10">
           <h2 className="text-2xl lg:text-4xl font-bold text-white text-center lg:text-left mb-4 lg:mb-0">
             This is a dashboard component
           </h2>
+
+          <Link href="/submit-listing">
+            <Button
+              size="lg"
+              className="bg-(--color-blue-custom) hover:bg-(--color-blue-light) text-white font-medium px-6 py-4 text-base rounded-lg flex items-center gap-2 hover:cursor-pointer transition-colors"
+            >
+              Submit Listing <ArrowUpRight size={20} />
+            </Button>
+          </Link>
+
           <Button
             onClick={handleLogout}
             size="lg"
