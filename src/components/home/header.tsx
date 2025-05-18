@@ -105,19 +105,17 @@ const SidebarComponent = ({ toggleSidebar }: { toggleSidebar: () => void }) => {
 };
 
 const Header = () => {
-  const [navbg, setNavbg] = useState("bg-(--blue-dark) lg:bg-transparent");
   const { toggleSidebar } = useSidebar();
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.pageYOffset > 200) {
-        setNavbg("bg-(--blue-dark)");
-      } else {
-        setNavbg("bg-(--blue-dark) lg:bg-transparent");
-      }
+      const scrollPosition = window.pageYOffset;
+      setIsScrolled(scrollPosition > 200);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // Use passive event listener for better scroll performance
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -131,7 +129,7 @@ const Header = () => {
         <div
           className={cn(
             "flex flex-row items-center justify-between rounded-full py-2 px-4 lg:px-2 transition-colors mx-2 lg:mx-0",
-            navbg,
+            isScrolled ? "bg-(--blue-dark)" : "bg-(--blue-dark) lg:bg-transparent"
           )}
         >
           {/* Logo */}
@@ -141,6 +139,8 @@ const Header = () => {
               alt="brand logo"
               title="brand logo"
               fill
+              priority
+              sizes="(max-width: 768px) 64px, 96px"
             />
           </Link>
 
